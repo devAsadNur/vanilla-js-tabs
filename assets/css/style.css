@@ -12,7 +12,7 @@ body {
     background: linear-gradient(to right, #514A9D, #24C6DC);
     /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-    font-family: Verdana,sans-serif;
+    font-family: Verdana, sans-serif;
     min-height: 100vh;
 }
 
@@ -62,7 +62,10 @@ p {
     margin-right: 0;
 }
 
-.tab-item:hover,
+.tab-item:hover {
+    background: #666;
+}
+
 .tab-item.active {
     background: #333;
 }
