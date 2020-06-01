@@ -1,0 +1,81 @@
+/* Base Styles Start */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #24C6DC;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #514A9D, #24C6DC);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #514A9D, #24C6DC);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    font-family: Verdana,sans-serif;
+    min-height: 100vh;
+}
+
+p {
+    margin-bottom: 15px;
+    line-height: 1.5em;
+}
+
+.container {
+    display: block;
+    margin: 50px auto;
+    width: 1170px;
+    max-width: 96%;
+    box-sizing: border-box;
+    background: #ddd;
+    min-height: 500px;
+    padding: 50px 30px;
+}
+
+.project-title {
+    margin: 0 auto 30px;
+    font-weight: 400;
+    text-align: center;
+}
+
+/* Base Styles End */
+
+
+
+/* Styles for Tab Start */
+.tab-list {
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+.tab-item {
+    display: inline-block;
+    background: #999;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px 5px 0 0;
+    cursor: pointer;
+}
+
+.tab-item:last-child {
+    margin-right: 0;
+}
+
+.tab-item:hover,
+.tab-item.active {
+    background: #333;
+}
+
+.tab-content {
+    background: #333;
+    color: #fff;
+    padding: 30px 20px 20px;
+    display: none;
+}
+
+.tab-content.active {
+    display: block;
+}
+
+/* Styles for Tab End */
