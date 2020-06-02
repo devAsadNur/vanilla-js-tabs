@@ -33,16 +33,19 @@ p {
 }
 
 .project-title {
-    margin: 0 auto 30px;
+    margin: 0 auto 40px;
     font-weight: 400;
     text-align: center;
 }
-
 /* Base Styles End */
 
 
 
 /* Styles for Tab Start */
+.tab-wrapper {
+    margin-bottom: 60px;
+}
+
 .tab-list {
     margin: 0 auto;
     padding: 0;
@@ -80,5 +83,4 @@ p {
 .tab-content.active {
     display: block;
 }
-
 /* Styles for Tab End */
