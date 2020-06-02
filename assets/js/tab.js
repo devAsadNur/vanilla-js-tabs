@@ -6,8 +6,13 @@ tabWrappers.forEach(wrapper => {
     let tabSelectors = wrapper.querySelectorAll('.tab-item'); // Tab Selectors
     let tabContents = wrapper.querySelectorAll('.tab-content'); // Tab Contents
 
+    let i = 1; // Initialize counter
     // Looping through each tab selector
     tabSelectors.forEach((selector, index, tabSelectors) => {
+
+        // Assigning custom data tab number to each tab selector
+        selector.dataset.tab = i;
+        i++;
 
         // Run event listener for each tab selector
         selector.addEventListener('click', function (e) {
@@ -26,8 +31,13 @@ tabWrappers.forEach(wrapper => {
                 }
             });
 
+            let j = 1; // Initialize counter
             // Looping through each of the tab contents
             tabContents.forEach(content => {
+
+                // Assigning custom data tab number to each tab content
+                content.dataset.tab = j;
+                j++;
 
                 // If 'tab content' not equel to 'selected tab', then remove 'active' class
                 // Else add 'active' class to the 'tab content'
@@ -37,9 +47,7 @@ tabWrappers.forEach(wrapper => {
                     content.classList.add('active');
                 }
             });
-
         });
     });
-
 });
 // Scripts for Tab End

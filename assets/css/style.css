@@ -29,7 +29,7 @@ p {
     box-sizing: border-box;
     background: #ddd;
     min-height: 500px;
-    padding: 50px 30px;
+    padding: 50px 30px 20px;
 }
 
 .project-title {
@@ -76,7 +76,7 @@ p {
 .tab-content {
     background: #333;
     color: #fff;
-    padding: 30px 20px 20px;
+    padding: 40px 25px 30px;
     display: none;
 }
 
