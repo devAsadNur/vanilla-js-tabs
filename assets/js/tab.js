@@ -1,53 +1,40 @@
 // Scripts for Tab Start
-let tabWrappers = document.querySelectorAll('.tab-wrapper'); // Tab Selectors
+let tabWrappers = document.querySelectorAll('.tab-wrapper'); // Tab Wrappers
 
 // Looping through each of the tab wrappers
 tabWrappers.forEach(wrapper => {
     let tabSelectors = wrapper.querySelectorAll('.tab-item'); // Tab Selectors
-    let tabContents = wrapper.querySelectorAll('.tab-content'); // Tab Contents
+    let tabPanels = wrapper.querySelectorAll('.tab-panel'); // Tab Panles
 
-    let i = 1; // Initialize counter
+    // Tab handler function
+    function tabHandler(e) {
+        e.preventDefault(); // Prevent default action
+        let currentTarget = e.currentTarget; // Current target, where event listener sets
+        let currentTabNum = currentTarget.dataset.tab; // Current tab number
+    
+        // Looping through each of the tab selectors
+        tabSelectors.forEach(item => {
+            // Remove 'active' class from all tab selectors
+           item.classList.remove('active');
+        });
+        // Add 'active' class to the current 'tab selector'
+        currentTarget.classList.add('active');
+    
+        // Looping through each of the tab panels
+        tabPanels.forEach(panel => {
+            // Remove 'active' class from all tab panels
+            panel.classList.remove('active');
+            // Add 'active' class to the current 'tab panel'
+            if(panel.dataset.tab === currentTabNum) {
+                panel.classList.add('active');
+            }
+        });
+    }
+
     // Looping through each tab selector
     tabSelectors.forEach((selector, index, tabSelectors) => {
-
-        // Assigning custom data tab number to each tab selector
-        selector.dataset.tab = i;
-        i++;
-
         // Run event listener for each tab selector
-        selector.addEventListener('click', function (e) {
-
-            let selectedTabNum = e.target.dataset.tab; // Selected tab number
-
-            // Looping through each of the tab selectors
-            tabSelectors.forEach(item => {
-
-                // If 'tab selector' not equel to 'triggered tab', then remove 'active' class 
-                // Else add 'active' class to the 'tab selector'
-                if(item.dataset.tab !== selectedTabNum) {
-                    item.classList.remove('active');
-                } else {
-                    this.classList.add('active');
-                }
-            });
-
-            let j = 1; // Initialize counter
-            // Looping through each of the tab contents
-            tabContents.forEach(content => {
-
-                // Assigning custom data tab number to each tab content
-                content.dataset.tab = j;
-                j++;
-
-                // If 'tab content' not equel to 'selected tab', then remove 'active' class
-                // Else add 'active' class to the 'tab content'
-                if(content.dataset.tab !== selectedTabNum) {
-                    content.classList.remove('active');
-                } else {
-                    content.classList.add('active');
-                }
-            });
-        });
+        selector.addEventListener('click', tabHandler, true);
     });
 });
 // Scripts for Tab End

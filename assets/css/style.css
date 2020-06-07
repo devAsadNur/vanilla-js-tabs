@@ -16,9 +16,14 @@ body {
     min-height: 100vh;
 }
 
-p {
+h1, h2, h3, h4, h5, h6 {
     margin-bottom: 15px;
+    font-weight: 400;
+}
+
+p {
     line-height: 1.5em;
+    margin-bottom: 15px;
 }
 
 .container {
@@ -73,14 +78,14 @@ p {
     background: #333;
 }
 
-.tab-content {
+.tab-panel {
     background: #333;
     color: #fff;
-    padding: 40px 25px 30px;
+    padding: 40px 25px 35px;
     display: none;
 }
 
-.tab-content.active {
+.tab-panel.active {
     display: block;
 }
 /* Styles for Tab End */
