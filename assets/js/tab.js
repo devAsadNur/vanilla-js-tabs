@@ -36,5 +36,6 @@ tabWrappers.forEach(wrapper => {
         // Run event listener for each tab selector
         selector.addEventListener('click', tabHandler, true);
     });
+    
 });
 // Scripts for Tab End
